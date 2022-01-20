@@ -3,8 +3,6 @@
 autoload -Uz promptinit
 promptinit
 
-# PROMPT='%F{208}%n%f %F{048}%~%f -> '
-
 # Git autoload
 autoload -Uz compinit && compinit
 
@@ -14,7 +12,6 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 PROMPT='%F{208}%n%f %F{083}%~%f %F{033}${vcs_info_msg_0_} -> '
-# PROMPT='${vcs_info_msg_0_}%# '
 zstyle ':vcs_info:git:*' formats '%b'
 
 setopt histignorealldups sharehistory

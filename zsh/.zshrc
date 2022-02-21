@@ -16,6 +16,9 @@ zstyle ':vcs_info:git:*' formats '%b'
 
 setopt histignorealldups sharehistory
 
+# start postgres service
+wsl.exe -u root service postgresql status > /dev/null || wsl.exe -u root service postgresql start > /dev/null
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 

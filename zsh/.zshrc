@@ -17,7 +17,7 @@ zstyle ':vcs_info:git:*' formats '%b'
 setopt histignorealldups sharehistory
 
 # start postgres service
-wsl.exe -u root service postgresql status > /dev/null || wsl.exe -u root service postgresql start > /dev/null
+# wsl.exe -u root service postgresql status > /dev/null || wsl.exe -u root service postgresql start > /dev/null
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -52,6 +52,17 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # https://github.com/zsh-users/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# nvm 
+# nvm
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Append custom scripts directory to $PATH (using special ZSH mapping of environment variables)
+path+=(~/bin)
+export PATH
+
+# Go
+# export GOPATH=$HOME/go
+# export GOROOT=/usr/local/opt/go/libexec
+# export GOBIN=$GOPATH/bin
+# export PATH=$PATH:$GOPATH
+# export PATH=$PATH:$GOROOT/bin[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

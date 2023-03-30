@@ -1,4 +1,4 @@
-# Timm's dotfiles
+# Dotfiles
 
 1. Clone repo into new hidden directory
 
